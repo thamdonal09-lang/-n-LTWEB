@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Arial,Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -40,7 +41,7 @@ nav ul {
     margin: 0;
 }
 
-nav ul li a {
+nav ul li, a {
     color: white;
     text-decoration: none;
     font-size: 12px;
@@ -162,9 +163,14 @@ nav ul li:nth-child(9):hover a {
     color: yellow;
 }
 /*-------------------------menu-bar-------------------*/
-.menu-bar {
-    background-color: yellow ;
-    width: 100% ;
+.menu-bar ul {
+    display: flex !important; /* Dùng lại !important riêng cho thằng này để ép nó nằm ngang */
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color:yellow;
 }
 
 }
@@ -183,30 +189,29 @@ nav ul li:nth-child(9):hover a {
     text-decoration: none; /* Xóa gạch chân */
 }
 
-.menu-bar ul li a i {
+.menu-bar  ul li a i {
     margin-right: 6px;
     font-size: 16px;
 }
-.menu-bar ul li {
-    padding: 15px 0;
-    transition:all 0.3s ease;
+.menu-bar-content > ul > li {
+    padding: 15px 6px;
+    transition: all 0.3s ease;
 }
 .menu-bar ul li:hover{
     background-color:white;
 }
 /*sim,thẻ cào giảm giá*/
-.menu-bar ul li.sale {
+.menu-bar-content > ul > li:nth-child(9) {
     position: relative;
-    opacity: 0.85;
 }
 
-.menu-bar ul li.sale::before {
+.menu-bar-content > ul > li:nth-child(9)::before {
     position: absolute;
-    content: "Giảm 36%";
+    content: "Giảm 5%";
     display: block;
     height: 15px;
     width: 45px;
-    background-color: #f51212;
+    background-color: #F51212;
     border-radius: 5px;
     right: -25px;
     top: 2px;
@@ -216,14 +221,14 @@ nav ul li:nth-child(9):hover a {
     z-index: 3;
 }
 
-.menu-bar ul li.sale::after {
+.menu-bar-content > ul > li:nth-child(9)::after {
     position: absolute;
     content: "";
-    background-color: #f51212;
+    background-color: #F51212;
     height: 7px;
     width: 7px;
     display: block;
-    top: 1px;
+    top: 12px;
     right: 10px;
     z-index: 2;
     transform: rotate(45deg);
@@ -293,4 +298,135 @@ nav ul li:nth-child(9):hover a {
     border:none;
     color:#fff;
     border-radius:5px;
+}
+/*--------------submenu----------------*/
+.menu-bar-content ul li{
+    position:relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #ddd !important; /* Ép màu xám chuẩn giống TGDĐ */
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 99;
+}
+.submenu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.submenu ul li {
+    display: block;
+    width: 100%;
+    padding: 6px 15px;
+}
+.submenu ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+.submenu ul li:hover a{
+    color: #288ad6;
+}
+.submenu ul li:hover {
+    background-color: #e0e0e0;
+}
+.menu-bar-content ul li:hover .submenu {
+    display: block;
+}
+.menu-bar-content > ul > li:hover .submenu {
+    display: block;
+}
+/*------------------Slider--------------------*/
+li {
+    list-style: none;
+}
+.Slider{
+    padding:20px 0;
+    height:350px;
+}
+.Slider-content{
+    display:flex;
+    justify-content:space-between;
+}
+.Slider-content-left{
+    width:66%;
+}
+.Slider-content-left-top {
+    position: relative; /* Tạo khung định vị cho các ảnh bên trong */
+    width: 100%;
+    height: 300px; /* Khớp với chiều cao bạn đang muốn */
+}
+.Slider-content-left-top img{
+    position: absolute; /* Xếp tất cả ảnh chồng khít lên nhau tại một chỗ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Ẩn hết các ảnh đi */
+    transition: 0.5s; /* Hiệu ứng chuyển mượt nếu có */
+}
+.Slider-content-left-top img:first-child {
+    opacity: 1; 
+}
+.Slider-content-right {
+    width: 35%;
+}
+.Slider-content-left-bottom{
+    display:flex;
+    justify-content:space-between;
+    border:2px solid white;
+    border-top:none;
+    height:50px;
+}
+.Slider-content-left-bottom li{
+    width:20%;
+    text-align:center;
+    cursor:pointer;
+    padding:6px 0;
+    height:100%;
+    line-height:38px;
+    position:relative;
+    position: relative;
+    border-top: 4px solid transparent;
+
+}
+.Slider-content-left-bottom li::before{
+    display:block;
+    content:"";
+    position:absolute;
+    height:70%;
+    width:1px;
+    background-color:#ddd;
+    right:0;
+}
+.Slider-content-left-bottom li.active,
+.Slider-content-left-bottom li:hover {
+    border-top: 4px solid #fed100 !important; /* Màu vàng đặc trưng của TGDĐ */
+    background-color: #fff !important;
+}
+.Slider-content-right{
+    width:35%;
+    display:flex;
+    flex-wrap:wrap;
+    padding:0 20px;
+    justify-content:space-around;
+}
+.Slider-content-right li{
+    width 50%;
+    height:50%;
+    text-align:center;
+    margin-bottom:6px;
+}
+.Slider-content-right li img{
+    height:170px;
+    width:170px;
 }
