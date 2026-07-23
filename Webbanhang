@@ -66,6 +66,22 @@
             <ul>
                 <li><a href=""><img style="width: 100px;height:auto" src="~/Image/3changlinhngulam.jpg" alt=""></a></li>
                 <li onclick="showAddressForm()" id="address-form"><a href="#">TP HCM <i class="fas fa-sort-down"></i></a></li>
+                <li>
+                    <input type="text" placeholder="Bạn mua gì...">
+                    <i class="fas fa-search"></i>
+                </li>
+
+                <li><a href=""></a><button><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
+
+                <li><a href="">Lịch sử <br /> đơn hàng</a></li>
+
+                <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
+
+                <li><a href="">24h Công nghệ</a></li>
+
+                <li><a href="">Hỏi đáp</a></li>
+
+                <li><a href="">Game app</a></li>
                 <div class="address-form">
                     <div class="address-form-content">
                         <h2>Chọn địa chỉ nhận hàng<span onclick="closeAddressForm()" class="address-close">X Đóng</span></h2>
@@ -97,21 +113,6 @@
                         </form>
                     </div>
                 </div>
-                <li>
-                    <input type="text" placeholder="Bạn mua gì...">
-                </li>
-
-                <li><a href=""></a><button><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
-
-                <li><a href="">Lịch sử <br /> đơn hàng</a></li>
-
-                <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
-
-                <li><a href="">24h Công nghệ</a></li>
-
-                <li><a href="">Hỏi đáp</a></li>
-
-                <li><a href="">Game app</a></li>
             </ul>
         </div>
     </nav>
