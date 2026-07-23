@@ -11,54 +11,23 @@
     <link rel="stylesheet" href="~/Content/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Ba Chang Linh Ngu Lam</title>
-    <style>
-    .menu-bar {
-        background-color: yellow !important;
-        width: 100% !important;
-        padding: 12px 0 !important;
-    }
-    .menu-bar .container {
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-    }
-    .menu-bar .menu-bar-content ul {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    .menu-bar .menu-bar-content ul li a {
-        color: black !important;
-        font-size: 15px !important;
-        text-decoration: none !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-    .menu-bar .menu-bar-content ul li a i {
-        margin-right: 6px !important;
-        font-size: 16px !important;
-    }
-</style>
-<script>
-    // Hàm mở bảng
-    function showAddressForm() {
-        const addressForm = document.querySelector('.address-form');
-        if (addressForm) {
-            addressForm.style.display = 'flex';
+    <script>
+        // Hàm mở bảng
+        function showAddressForm() {
+            const addressForm = document.querySelector('.address-form');
+            if (addressForm) {
+                addressForm.style.display = 'flex';
+            }
         }
-    }
 
-    // Hàm đóng bảng khi bấm vào chữ X Đóng
-    function closeAddressForm() {
-        const addressForm = document.querySelector('.address-form');
-        if (addressForm) {
-            addressForm.style.display = 'none';
+        // Hàm đóng bảng khi bấm vào chữ X Đóng
+        function closeAddressForm() {
+            const addressForm = document.querySelector('.address-form');
+            if (addressForm) {
+                addressForm.style.display = 'none';
+            }
         }
-    }
-</script>
+    </script>
 </head>
 <body>
     <nav>
@@ -123,14 +92,74 @@
                     <li><a href=""><i class="fas fa-mobile-alt"></i> Điện thoại</a></li>
                     <li><a href=""><i class="fas fa-laptop"></i> Laptop</a></li>
                     <li><a href=""><i class="fas fa-tablet"></i> Tablet</a></li>
-                    <li><a href=""><i class="fas fa-headphones-alt"></i> Phụ kiện <i style="margin-left:4px;" class="fas fa-sort-down"></i></a></li>
+                    <li><a href=""><i class="fas fa-headphones-alt"></i> Phụ kiện <i style="margin-left:4px;" class="fas fa-sort-down"></i></a>
+                      <div class="submenu">
+                          <ul>
+                              <li><a href="">Phụ kiện 1</a></li>
+                              <li><a href="">Phụ kiện 2</a></li>
+                              <li><a href="">Phụ kiện 3</a></li>
+                              <li><a href="">Phụ kiện 4</a></li>
+                              <li><a href="">Phụ kiện 5</a></li>
+                              <li><a href="">Phụ kiện 6</a></li>
+                              <li><a href="">Phụ kiện 7</a></li>
+                              <li><a href="">Phụ kiện 8</a></li>
+                              <li><a href="">Phụ kiện 9</a></li>
+                              <li><a href="">Phụ kiện 10</a></li>
+                          </ul>
+                      </div>
+                    </li>
                     <li><a href=""><i class="fas fa-stopwatch-20"></i> Đồng hồ</a></li>
                     <li><a href=""><i class="fas fa-tablet"></i> Tablet</a></li>
-                    <li><a href=""><i class="fas fa-mobile-alt"></i> Điện thoại</a></li>
+                    <li>
+                        <a href=""><i class="fas fa-mobile-alt"></i> Điện thoại<i style="margin-left:4px;" class="fas fa-sort-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Phụ kiện 1</a></li>
+                                <li><a href="">Phụ kiện 2</a></li>
+                                <li><a href="">Phụ kiện 3</a></li>
+                                <li><a href="">Phụ kiện 4</a></li>
+                                <li><a href="">Phụ kiện 5</a></li>
+                                <li><a href="">Phụ kiện 6</a></li>
+                                <li><a href="">Phụ kiện 7</a></li>
+                                <li><a href="">Phụ kiện 8</a></li>
+                                <li><a href="">Phụ kiện 9</a></li>
+                                <li><a href="">Phụ kiện 10</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li><a href="">Máy cũ giá rẻ</a></li>
-                    <li class="sale"><a href="">Sim, thẻ cào</a></li>
+                    <li><a href="">Sim, thẻ cào</a></li>
                     <li><a href="">Trả góp, điện nước</a></li>
                 </ul>
+            </div>
+        </div>
+    </section>
+    <!------------------------Slider------------------------------->
+    <section class="Slider">
+        <div class="container">
+            <div class="Slider-content">
+                <div class="Slider-content-left">
+                    <div class="Slider-content-left-top">
+                        <img src="/Image/ip0.jpg" alt="" />
+                        @*<img src="~/Image/TruongLang.jpg" alt="" />
+                        <img src="~/Image/TruongLang.jpg" alt="" />
+                        <img src="~/Image/TruongLang.jpg" alt="" />
+                        <img src="~/Image/TruongLang.jpg" alt="" />*@
+                    </div>
+                    <div class="Slider-content-left-bottom">
+                        <li>Tiêu đề 1</li>
+                        <li>Tiêu đề 2</li>
+                        <li>Tiêu đề 3</li>
+                        <li>Tiêu đề 4</li>
+                        <li>Tiêu đề 5</li>
+                    </div>
+                </div>
+            </div>
+            <div class="Slider-content-right">
+                <li><a href=""><img src="/Image/ip1.jpg" alt=""</a></li>
+                <li><a href=""><img src="/Image/ip2.jpg" alt=""</a></li>
+                <li><a href=""><img src="/Image/laptop.jpg" alt=""</a></li>
+                <li><a href=""><img src="/Image/laptop1.jpg" alt=""</a></li>
             </div>
         </div>
     </section>
