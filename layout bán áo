@@ -79,9 +79,10 @@
         </div>
     </header>
     <nav style="justify-content:center;width:100%;display:flex;gap:10px">
-        <a href="#" class="fm-menu">Home</a>
-        <a href="#"class="fm-menu">Áo</a>
-        <a href="#"class="fm-menu">Quần</a>
+        <a href="#" class="fm-menu">Nón</a>
+        <a href="#" class="fm-menu">Áo Thun</a>
+        <a href="#" class="fm-menu">Quần jean</a>
+        <a href="#" class="fm-menu">Giày</a>
     </nav>
     <main style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0 20px; ">
         <section style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; flex: 1;">
