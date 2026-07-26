@@ -12,7 +12,7 @@
     <meta name="description" content="Chuyên bán quàn áo cao cấp" />
     <title>Home</title>
 
-    
+
 
     <link href="~/Content/style.css" rel="stylesheet" />
 
@@ -83,17 +83,34 @@
             <div class="hotline-box">
                 <p>Hotline: <i class="fa-solid fa-phone"></i> 1234567890</p>
             </div>
-            <div style="display: flex; align-items: center; gap: 25px; font-size: 20px;">
-                <!-- Icon Đăng nhập / Tài khoản -->
-                <a href="@Url.Action("Index", "Login")" title="Đăng nhập / Tài khoản" style="color: #333; text-decoration: none; padding: 5px;">
-                    <i class="fa-regular fa-user"></i>
-                </a>
+
+            <div style="display: flex; align-items: center; gap: 20px; font-size: 16px;">
+                <!-- Kiểm tra trạng thái đăng nhập -->
+                @if (Session["Username"] != null)
+                {
+                    <span style="font-weight: bold; color: #001133;">
+                        <i class="fa-regular fa-user"></i> Xin chào, @Session["Username"]!
+                    </span>
+                    <a href="@Url.Action("Logout", "Login")" style="color: #d9534f; text-decoration: none; font-weight: bold; padding: 5px 10px; border: 1px solid #d9534f; border-radius: 4px;">
+                        Đăng xuất
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Index", "Login")" title="Đăng nhập" style="color: #333; text-decoration: none; padding: 5px; font-weight: bold;">
+                        <i class="fa-regular fa-user"></i> Đăng nhập
+                    </a>
+                    <a href="@Url.Action("Register", "Login")" title="Đăng ký" style="background: #001133; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold;">
+                        Đăng ký
+                    </a>
+                }
 
                 <!-- Icon Giỏ hàng -->
-                <a href="@Url.Action("Index", "Cart")" title="Giỏ hàng" style="color: #333; text-decoration: none; padding: 5px;">
+                <a href="@Url.Action("Index", "Cart")" title="Giỏ hàng" style="color: #333; text-decoration: none; padding: 5px; font-size: 20px;">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </div>
+
         </header>
         <img src="~/Image/welcome.jpg" style="height:400px;width:100%" />
         <p class="geomini-intro">
