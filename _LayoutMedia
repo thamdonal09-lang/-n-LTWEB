@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+</head>
+<body>
+    <!-- PHẦN HEADER & LOGO BẤM VỀ TRANG CHỦ -->
+    <div>
+        <header class="header-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #fff; border-bottom: 1px solid #ddd;">
+            <!-- Click vào logo hoặc tên shop sẽ dẫn về trang chủ (Home) -->
+            <a href="@Url.Action("Home", "Home")" class="logo-box" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="~/Image/3changlinhngulam.jpg" class="logo" alt="Logo" style="height: 50px; width: auto; object-fit: contain;" />
+                <h1 style="font-size: 20px; color: #333; margin: 0;">Shop quần áo</h1>
+            </a>
+            <div class="hotline-box">
+                <p style="margin: 0;">Hotline: <i class="fa-solid fa-phone"></i> 1234567890</p>
+            </div>
+        </header>
+    </div>
+    <div class="icon-show" onclick="togleMenu()" style="cursor: pointer; padding: 10px;">
+        <i class="fa-solid fa-bars"></i> Menu
+    </div>
+    <nav>
+        <ol class="fm-menu" id="fm-menu" style="list-style:none;">
+            <li class="item-menu"><a href="@Url.Action("Ao", "Home")">Áo</a></li>
+            <li class="item-menu"><a href="@Url.Action("Quan", "Home")">Quần</a></li>
+            <li class="item-menu"><a href="@Url.Action("Non", "Home")">Nón</a></li>
+            <li class="item-menu"><a href="@Url.Action("Giay", "Home")">Giày</a></li>
+            <li class="item-menu"><a href="@Url.Action("Kinh", "Home")">Kính</a></li>
+            <li class="item-menu"><a href="@Url.Action("Phukien", "Home")">Phụ kiện</a></li>
+        </ol>
+    </nav>
+    <div class="container" style="padding: 20px;">
+        <div class="container" style="padding: 20px;">
+            @RenderBody()
+        </div>
+    </div>
+    <script>
+        function togleMenu() {
+            var menu = document.getElementById("fm-menu");
+            // Kiểm tra nếu đang ẩn thì hiện, đang hiện thì ẩn
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
