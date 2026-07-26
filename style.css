@@ -164,3 +164,11 @@ html {
     gap: 10px;
     text-decoration: none;
 }
+.pro-box{
+    display:block;
+}
+.list-pro{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
