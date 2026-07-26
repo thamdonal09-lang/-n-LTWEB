@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using DeAnCuoiKi.Models;
+
+namespace DeAnCuoiKi.Controllers
+{
+    public class HomeController : Controller
+    {
+        ShopQuanAoDBEntities db = new ShopQuanAoDBEntities();
+        public ActionResult Home()
+        {
+            var list = db.Products.ToList();
+            return View(list);
+        }
+
+
+
+
+        public ActionResult Media()
+        {
+            return View();
+        }
+        public ActionResult Ao()
+        {
+            var listAo = db.Products.Where(p => p.CategoryID == 1).ToList();
+            return View(listAo);
+        }
+        public ActionResult Quan()
+        {
+            var listQuan = db.Products.Where(p => p.CategoryID == 2).ToList();
+            return View(listQuan);
+        }
+        public ActionResult Non()
+        {
+            var listNon = db.Products.Where(p => p.CategoryID == 3).ToList();
+            return View(listNon);
+        }
+        public ActionResult Giay()
+        {
+            var listGiay = db.Products.Where(p => p.CategoryID == 4).ToList();
+            return View(listGiay);
+        }
+        public ActionResult Kinh()
+        {
+            var listKinh = db.Products.Where(p => p.CategoryID == 5).ToList();
+            return View(listKinh);
+        }
+        public ActionResult Phukien()
+        {
+            var listPhukien = db.Products.Where(p => p.CategoryID == 6).ToList();
+            return View(listPhukien);
+        }
+        public ActionResult Index()
+        {
+            var listProduct = db.Products.ToList();
+            return View(listProduct);
+        }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+    }
+}
