@@ -12,6 +12,8 @@
     <meta name="description" content="Chuyên bán quàn áo cao cấp" />
     <title>Home</title>
 
+    
+
     <link href="~/Content/style.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,56 +74,98 @@
     </style>
 </head>
 <body>
-    <header >
-        <div >
-            <div style="display:flex;float:left;align-items:center">
-                <img src="~/Image/3changlinhngulam.jpg" width="100" height="100" />
-                <h1 class="geomini-brand">Shop quần áo</h1>
+    <div>
+        <header class="header-bar">
+            <a href="#" class="logo-box">
+                <img src="~/Image/3changlinhngulam.jpg" class="logo" alt="Logo" style="height: 50px; width: auto; object-fit: contain;" />
+                <h1 class="cormorant-infant-brand">Shop quần áo</h1>
+            </a>
+            <div class="hotline-box">
+                <p>Hotline: <i class="fa-solid fa-phone"></i> 1234567890</p>
             </div>
-            <div style="float:right">
-                <p>Hotline:<i class="fa-solid fa-phone"></i>1234567890</p>
+            <div style="display: flex; align-items: center; gap: 25px; font-size: 20px;">
+                <!-- Icon Đăng nhập / Tài khoản -->
+                <a href="@Url.Action("Index", "Login")" title="Đăng nhập / Tài khoản" style="color: #333; text-decoration: none; padding: 5px;">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <!-- Icon Giỏ hàng -->
+                <a href="@Url.Action("Index", "Cart")" title="Giỏ hàng" style="color: #333; text-decoration: none; padding: 5px;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
             </div>
-            <img src="~/Image/laptop.jpg" style="height:250px;width:100%" />
-            <p class="geomini-intro">
-                Chào mừng đến với shop quần áo của ba chàng lính ngự lâm
-            </p>
-        </div>
-    </header>
-    <nav style="justify-content:center;width:100%;display:flex;gap:10px">
-        <a href="#" class="fm-menu">Nón</a>
-        <a href="#" class="fm-menu">Áo Thun</a>
-        <a href="#" class="fm-menu">Quần jean</a>
-        <a href="#" class="fm-menu">Giày</a>
+        </header>
+        <img src="~/Image/welcome.jpg" style="height:400px;width:100%" />
+        <p class="geomini-intro">
+            Chào mừng đến với shop quần áo của ba chàng lính ngự lâm
+        </p>
+    </div>
+    <div class="icon-show" onclick="togleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <nav>
+        <ol class="fm-menu" id="fm-menu" style="list-style:none; ">
+            <li class="item-menu">
+                <a href="@Url.Action("Ao", "Home")">Áo</a>
+            </li>
+            <li class="item-menu">
+                <a href="@Url.Action("Quan", "Home")">Quần</a>
+            </li>
+            <li class="item-menu">
+                <a href="@Url.Action("Non", "Home")">Nón</a>
+            </li>
+            <li class="item-menu">
+                <a href="@Url.Action("Giay", "Home")">Giày</a>
+            </li>
+            <li class="item-menu">
+                <a href="@Url.Action("Kinh", "Home")">Kính</a>
+            </li>
+            <li class="item-menu">
+                <a href="@Url.Action("Phukien", "Home")">Phụ kiện</a>
+            </li>
+        </ol>
     </nav>
-    <main style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0 20px; ">
-        <section style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; flex: 1;">
+
+    <main class="fm-main">
+        <section class="fm-products">
             <article class="fm-content-item">
                 <h2>Áo </h2>
-                <img src="~/Image/ip1.jpg" class="fm-img-content" />
+                <img src="~/Image/ao.jpg" class="fm-img-content" />
                 <p>Áo đẹp</p>
             </article>
             <article class="fm-content-item">
                 <h2>Quần </h2>
-                <img src="~/Image/ip2.jpg" class="fm-img-content" />
+                <img src="~/Image/quan.jpg" class="fm-img-content" />
                 <p>Quần đẹp</p>
             </article>
             <article class="fm-content-item">
                 <h2>Nón </h2>
-                <img src="~/Image/laptop.jpg" class="fm-img-content" />
+                <img src="~/Image/nón.jpg" class="fm-img-content" />
                 <p>Nón đẹp</p>
             </article>
             <article class="fm-content-item">
                 <h2>Giày </h2>
-                <img src="~/Image/laptop1.jpg" class="fm-img-content" />
+                <img src="~/Image/giày.jpg" class="fm-img-content" />
                 <p>Giày đẹp</p>
             </article>
+            <article class="fm-content-item">
+                <h2>Phụ kiện</h2>
+                <img src="~/Image/phukien.jpg" class="fm-img-content" />
+                <p>Phụ kiện đẹp</p>
+            </article>
+            <article class="fm-content-item">
+                <h2>Kính</h2>
+                <img src="~/Image/kinh.jpg" class="fm-img-content" />
+                <p>Kính đẹp</p>
+            </article>
         </section>
-        <aside style="min-width: 200px; text-align: center;">
+
+        <aside class="fm-sidebar">
             <h3>Opening Hours:</h3>
             <p>06:45 AM - 22:00 PM</p>
-            <img src="~/Image/TruongLang.jpg" />
+            <img src="~/Image/sale1.jpg" class="fm_poster" />
             <br />
-            <img src="~/Image/TruongLang.jpg" />
+            <img src="~/Image/sale2.jpg" class="fm_poster" />
         </aside>
     </main>
     <footer style="background-color: #001133; color: white; padding: 40px 20px; font-family: sans-serif; margin-top: 40px;">
@@ -170,7 +214,7 @@
                 <div style="background: #222; display: inline-block; padding: 5px 10px; font-weight: bold; border-radius: 4px; margin-bottom: 10px; font-size: 12px;">COD</div>
                 <div>
                     <div style="border: 1px solid #00bfff; color: #00bfff; padding: 5px 8px; display: inline-block; font-size: 11px; font-weight: bold;">VCB</div>
-                    <div style="border: 1px solid #00bfff; color: #00bfff; padding: 5px 8px; display: inline-block; font-size: 11px; font-weight: bold;">Momo</div> 
+                    <div style="border: 1px solid #00bfff; color: #00bfff; padding: 5px 8px; display: inline-block; font-size: 11px; font-weight: bold;">Momo</div>
                 </div>
             </div>
 
@@ -181,5 +225,17 @@
             © Bản quyền thuộc về <strong>Ba Chàng Lính Ngự Lâm</strong>
         </div>
     </footer>
+    <div>
+        <script>
+            function togleMenu() {
+                var menu = document.getElementById("fm-menu");
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            }
+        </script>
+    </div>
 </body>
 </html>
